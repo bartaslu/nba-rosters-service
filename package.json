@@ -1,0 +1,14 @@
+{
+  "name": "nba-rosters-service",
+  "version": "1.0.0",
+  "description": "NBA rosters API",
+  "main": "server.js",
+  "author": "Bartas Lukauskas",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2",
+    "nodemon": "^2.0.21"
+  }
+}
