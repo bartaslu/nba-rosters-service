@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const teamRoutes = require('./routes/team.js');
 const playerRoutes = require('./routes/player.js');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.use(bodyParser.json());
