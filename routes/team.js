@@ -46,7 +46,7 @@ router.put("/:id", async(req, res) => {
    
     try{
         const {id} = req.params;
-        const {name, city, arena} = req.body;
+        const {name, city, arena, players} = req.body;
         const updateTeam = {};
 
         if(name)
@@ -55,6 +55,8 @@ router.put("/:id", async(req, res) => {
             updateTeam.city = city;
         if(arena)
             updateTeam.arena = arena;
+        if(players)
+            updateTeam.players = players;
         
         let team = await TeamModel.findByIdAndUpdate(id, updateTeam, {
             new: true
