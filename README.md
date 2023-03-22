@@ -5,4 +5,5 @@ To launch you have to have [docker]("https://www.docker.com/products/docker-desk
 3. Navigate to the directory, where you saved the files
 4. Run `docker-compose up`
 5. Wait until both services are started
-6. Open browser and go to `http://localhost:5000/home`
+6. Open browser and go to `http://localhost:5000/home`  or `http://localhost:5000/players`
+7.
