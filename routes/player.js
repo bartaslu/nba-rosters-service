@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
         res.status(200).json({status: res.statusCode, players});
         console.log({status: res._header, players});
     }catch(error){
-        res.status(500).json({status: res.statusCode, error: "Can't find any players!"});
+        res.status(404).json({status: res.statusCode, error: "Can't find any players!"});
         console.log({status: res._header, message: error.message});
     }    
 })
@@ -60,7 +60,8 @@ router.put("/:id", async(req, res) => {
         let player = await PlayerModel.findByIdAndUpdate(id, updatePlayer, {
             new: true
         })
-        res.status(200).json({status: res.statusCode, message: "NBA player was updated!", player});
+        // Could do 200
+        res.status(201).json({status: res.statusCode, message: "NBA player was updated!", player});
         console.log({status: res.statusCode, message: "NBA player was updated!", player});
     }catch(error){
         res.status(400).json({message: error.message})
@@ -68,18 +69,32 @@ router.put("/:id", async(req, res) => {
     }
 })
 
+
 router.delete('/:id', async(req,res) => {
     try{
         const {id} = req.params;
-        const player = await PlayerModel.findByIdAndDelete(id);
+        await PlayerModel.findByIdAndDelete(id);
         
-        res.json({status: res.statusCode, message: "Player deleted", player});
-        console.log(res.json({status: res.statusCode, message: "Player deleted", player}));
+        res.status(200).json({status: res.statusCode, message: "Player deleted"});
+        console.log({status: res._header, message: "Player deleted"});
     }catch(error){
-        res.status(500).json({status: res.statusCode, message: error.message})
+        res.status(404).json({status: res.statusCode, message: error.message})
         console.log({status: res._header, message: error.message});
     }
 })
+
+// router.delete('/:id', async(req,res) => {
+//     try{
+//         const {id} = req.params;
+//         await PlayerModel.findByIdAndDelete(id);
+        
+//         res.status(200).json({status: res.statusCode, message: "Player deleted"});
+//         console.log(res.json({status: res._header, message: "Player deleted"}));
+//     }catch(error){
+//         res.status(404).json({status: res.statusCode, message: error.message})
+//         console.log({status: res._header, message: error.message});
+//     }
+// })
 // async function getPlayer(req, res, next){
 //     let player = null;
 

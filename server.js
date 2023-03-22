@@ -35,7 +35,6 @@ app.get('/home', async (req, res) => {
 
 
 const players = [
-
     {
         firstName: "Lebron",
         lastName: "Jamees",
