@@ -5,11 +5,11 @@ To launch you have to have [docker]("https://www.docker.com/products/docker-desk
 3. Run `docker-compose up`
 4. Wait until both services are started
 
-## How to get information
+## How to GET information
 5. Now you can go on your browser or use some additional program(like postman) for GET method `http://localhost:5000/players`
 6. To get informationn in the database about teams go on your browser or use postman for GET method `http://localhost:5000/teams`
 
-## How to create a team
+## How to CREATE a team
 ```
   POST http://localhost:5000/teams/
 
@@ -29,7 +29,7 @@ Players is not required field, so it's possible to create a team without players
 
 
 ## How to update the information
-7. Update your teams with player via Postman app 
+7. UPDATE your teams with player via Postman app 
 ```
   PUT http://localhost:5000/teams/${fill in team id}
 
@@ -44,7 +44,7 @@ Players is not required field, so it's possible to create a team without players
 ```
 
 ## How to delete
-8. Via postman DELE method 
+8. Via postman DELETE method 
 ```
    DELETE http://localhost:5000/players/${fill in player id}
 or
